@@ -43,6 +43,7 @@
 ### Docker + Compose
 Installation:
 ```
+brew update
 brew install docker docker-compose
 ```
 
