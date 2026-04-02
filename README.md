@@ -40,3 +40,32 @@
   rm -rf fonts
   ```
 
+## Development environment
+
+### [IntelliJ IDEA](https://lp.jetbrains.com)
+Download proper DMG from the web site
+
+### [VSCode](https://code.visualstudio.com)
+Download proper DMG from the web site
+
+### [Simple Python Version Management: pyenv](https://github.com/pyenv/pyenv)
+Installation of the manager:
+```
+brew update
+brew install openssl readline sqlite3 xz tcl-tk@8 libb2 zstd zlib pkgconfig pyenv
+```
+```
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
+```
+
+### [Claude Code](https://claude.com/product/claude-code)
+Installation:
+```
+curl -fsSL https://claude.ai/install.sh | bash
+```
+Setup:
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+```
