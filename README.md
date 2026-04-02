@@ -1,19 +1,42 @@
 # Mac-setup
 
 ## Must have
-- (Homebrew)[https://brew.sh]
+### [Homebrew](https://brew.sh)
   _Xcode Command Line Tools_ will be installed as part of Homebrew.
-  Installation: ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
-  After the install, register the command via:
+
+  Installation:
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+
+  After the install, register the environment via:
   ```
   echo >> ~/.zprofile
   echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv zsh)"
   ```
-- (iterm2)[https://iterm2.com]
-  Installation by downloading from (https://iterm2.com/downloads.html)[https://iterm2.com/downloads.html]
+
+### [iterm2](https://iterm2.com)
+  Installation by downloading from <https://iterm2.com/downloads.html>
   Move to `Applications` folder after downloading.
   Peferred profile settings are at `./iterm2/Default.json`
-- (oh-my-zsh)[https://ohmyz.sh]
-  Installation: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+### [oh-my-zsh](https://ohmyz.sh)
+  Installation:
+  ```
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
+
+  My preferred plugins are:
+  ```plugins=(git common-aliases docker docker-compose iterm2 macos sudo themes urltools)```
+
+### [Powerline fonts](https://github.com/powerline/fonts)
+  Installation:
+  ```
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
+  ```
 
