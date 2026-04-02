@@ -40,6 +40,12 @@
   rm -rf fonts
   ```
 
+### Docker + Compose
+Installation:
+```
+brew install docker docker-compose
+```
+
 ## Development environment
 
 ### [IntelliJ IDEA](https://lp.jetbrains.com)
