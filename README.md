@@ -40,6 +40,44 @@
   rm -rf fonts
   ```
 
+### [Github SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+Generate keys pair:
+```
+ssh-keygen -t ed25519 -C "dennispo@gmail.com"
+```
+
+First, check to see if your ~/.ssh/config file exists in the default location.
+```
+$ open ~/.ssh/config
+> The file /Users/YOU/.ssh/config does not exist.
+```
+
+If the file doesn't exist, create the file.
+```
+touch ~/.ssh/config
+```
+
+Open your ~/.ssh/config file, then modify the file to contain the following lines. If your SSH key file has a different name or path than the example code, modify the filename or path to match your current setup.
+``` Text
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.
+```
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+Last, add the SSH public key to your account on GitHub. For more information, ([Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)):
+
+Copy the contents of public key to the clipboard:
+```
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+Goto [Github.com > Profile > Settings > SSH and GPG keys](https://github.com/settings/keys) and add a new SHH key.
 ### Docker + Compose
 Installation:
 ```
